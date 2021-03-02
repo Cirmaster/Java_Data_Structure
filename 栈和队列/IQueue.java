@@ -1,3 +1,5 @@
+
+
 public interface IQueue {
     public void clear();    //将队列置空
     public boolean isEmpty();   //判断队列是否为空

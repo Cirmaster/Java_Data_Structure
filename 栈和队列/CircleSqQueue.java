@@ -1,3 +1,5 @@
+
+
 public class CircleSqQueue implements IQueue{
 
     private Object[] queueElem; //队列的储存空间
@@ -11,22 +13,22 @@ public class CircleSqQueue implements IQueue{
         queueElem = new Override[maxSize];
         this.maxSize = maxSize;
     }
-    @Override//将队列清空
+    //将队列清空
     public void clear() {
         front = rear = 0;
     }
 
-    @Override//判断队列是否为空
+    //判断队列是否为空
     public boolean isEmpty() {
         return rear == front;
     }
 
-    @Override//返回队列的长度
+    //返回队列的长度
     public int length() {
         return (rear - front + maxSize) % maxSize;
     }
 
-    @Override//读取队首元素并返回其值
+    //读取队首元素并返回其值
     public Object peek() {
         if(isEmpty()){
             return null;
@@ -34,7 +36,7 @@ public class CircleSqQueue implements IQueue{
         return queueElem[front];
     }
 
-    @Override//入队
+    //入队
     public void offer(Object x) throws Exception {
         if((rear + 1) % maxSize == front){
             throw new Exception("队列已满");
@@ -43,7 +45,7 @@ public class CircleSqQueue implements IQueue{
         rear = (rear + 1) % maxSize;
     }
 
-    @Override//出队
+    //出队
     public Object poll() {
         if(rear == front){
             return null;
@@ -53,7 +55,7 @@ public class CircleSqQueue implements IQueue{
         return p;
     }
 
-    @Override//输出队列中的所有数据元素
+    //输出队列中的所有数据元素
     public void display() {
         if(!isEmpty()){
             for(int i = front; i < rear; i = (i + 1) % maxSize){

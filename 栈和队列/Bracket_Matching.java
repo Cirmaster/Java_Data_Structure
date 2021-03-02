@@ -1,4 +1,5 @@
 
+
 class sqstack extends SqStack_s {
     public sqstack(int maxSize) {
         super(maxSize);
